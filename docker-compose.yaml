@@ -1,0 +1,17 @@
+version: "3.4"
+
+services:
+  postgres:
+    image: postgres
+    shm_size: "2gb"
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=sim
+      - POSTGRES_PASSWORD=sim
+      - POSTGRES_USER=sim
+    volumes:
+      - "pg-volume:/var/lib/postgresql/data"
+volumes:
+  pg-volume:
+# docker-compose --env-file ../.env up -d
